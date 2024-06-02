@@ -1,4 +1,5 @@
 # ClassDom Database Project
+<p align="center"><img src="https://github.com/beyond-sw-camp/be07-1st-6team-classdom/issues/1#issue-2329703183"/></p>
 - 프로젝트 개요
 - 
   ClassDom 시스템은 프리랜서 교육 강사들이 효율적이고 효과적으로 교육 활동을 수행할 수 있도록 지원하기 위해 기획된 서비스입니다.
