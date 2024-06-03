@@ -1,5 +1,5 @@
 # 👑Class Dom👑
-<p align="center"><img src="https://github.com/hjin111/be07-1st-6team-classdom/blob/main/classdom.jpg" width="1000" height="300"/></p>
+<p align="center"><img src="https://github.com/beyond-sw-camp/be07-1st-6team-classdom/blob/main/classdom/image/classdom.jpg" width="1000" height="300"/></p>
 
 <hr>
 
@@ -8,10 +8,10 @@
 ### 🤭 팀원
 
 <p align="center">
-	<img src="https://github.com/hjin111/be07-1st-6team-classdom/blob/main/min.jpg" width="200" height="200"/>
-	<img src="https://github.com/hjin111/be07-1st-6team-classdom/blob/main/seung.jpg" width="200" height="200"/>
-	<img src="https://github.com/hjin111/be07-1st-6team-classdom/blob/main/su.jpg" width="200" height="200"/>
-	<img src="https://github.com/hjin111/be07-1st-6team-classdom/blob/main/hye.jpg" width="200" height="200"/>
+	<img src="https://github.com/beyond-sw-camp/be07-1st-6team-classdom/blob/main/classdom/image/min.jpg" width="200" height="200"/>
+	<img src="https://github.com/beyond-sw-camp/be07-1st-6team-classdom/blob/main/classdom/image/seung.jpg" width="200" height="200"/>
+	<img src="https://github.com/beyond-sw-camp/be07-1st-6team-classdom/blob/main/classdom/image/su.jpg" width="200" height="200"/>
+	<img src="https://github.com/beyond-sw-camp/be07-1st-6team-classdom/blob/main/classdom/image/hye.jpg" width="200" height="200"/>
 </p>
 
 <div align="center">
