@@ -64,10 +64,10 @@
 <hr>
 
 [WBS 바로가기](https://docs.google.com/spreadsheets/d/1eHBIEEkxueLymtcP5HVBi0v87ioZNQ4pFrXA9FRIbj0/edit#gid=0)
+
 <img src="https://github.com/beyond-sw-camp/be07-1st-6team-classdom/blob/main/classdom/image/classdom%20project%20wbs.jpg">
 
-
-
+<hr>
 
 ### ✅ 요구사항 명세서
 
