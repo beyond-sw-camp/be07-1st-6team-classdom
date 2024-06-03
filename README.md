@@ -61,13 +61,17 @@
 
 ### 📝 WBS
 
-[WBS 바로가기](https://docs.google.com/spreadsheets/d/1eHBIEEkxueLymtcP5HVBi0v87ioZNQ4pFrXA9FRIbj0/edit#gid=0)
+[WBS 바로가기](https://docs.google.com/spreadsheets/d/1eHBIEEkxueLymtcP5HVBi0v87ioZNQ4pFrXA9FRIbj0/edit?usp=sharing)
 
-<img src="https://github.com/beyond-sw-camp/be07-1st-6team-classdom/blob/main/classdom/image/classdom%20project%20wbs.jpg">
+<img src="https://github.com/beyond-sw-camp/be07-1st-6team-classdom/blob/main/classdom/image/classdom%20project%20wbs.jpg"/>
 
 <hr>
 
 ### ✅ 요구사항 명세서
+
+[요구사항 명세서 바로가기](https://docs.google.com/spreadsheets/d/1Ge8ewxcIoQFSbuUcMrHNBwXbub2AGpcEBOwOsaRaceg/edit#gid=101003277)
+
+<img src="https://github.com/beyond-sw-camp/be07-1st-6team-classdom/blob/main/classdom/image/class%20dom%20project%20%EC%9A%94%EA%B5%AC%EC%82%AC%ED%95%AD%EB%AA%85%EC%84%B8%EC%84%9C.jpg"/>
 
 <hr>
 
