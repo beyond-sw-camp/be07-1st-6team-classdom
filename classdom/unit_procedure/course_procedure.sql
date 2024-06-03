@@ -83,3 +83,18 @@ END
 // DELIMITER ;
 
 call register_delete();
+
+-- 회원이 수강하고 있는 강좌 전체 조회
+DELIMITER //
+CREATE PROCEDURE `get_student_courses` (
+    IN studentId BIGINT(20) UNSIGNED
+)
+BEGIN
+    SELECT c.*
+    FROM course c
+    INNER JOIN course_register cr ON c.id = cr.course_id
+    WHERE cr.student_id = studentId
+    AND cr.del_yn = 'N'
+    AND c.del_yn = 'N';
+END 
+// DELIMITER ;
