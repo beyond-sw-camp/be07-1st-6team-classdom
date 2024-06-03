@@ -323,6 +323,36 @@ CREATE TABLE `fa` (
 <summary><b>강좌 등록 신청</b></summary>
 <img src="https://github.com/beyond-sw-camp/be07-1st-6team-classdom/blob/main/classdom/image/course_upload.png">
 </details>
+<details>
+<summary><b>강좌 개설 신청된 강좌 승인</b></summary>
+<img src="https://github.com/beyond-sw-camp/be07-1st-6team-classdom/blob/main/classdom/image/course_approval.png">
+</details>
+<details>
+<summary><b>전체 강좌 조회</b></summary>
+<img src="https://github.com/beyond-sw-camp/be07-1st-6team-classdom/blob/main/classdom/image/course_all_select.png">
+</details>
+<details>
+<summary><b>강좌 검색</b></summary>
+<img src="https://github.com/beyond-sw-camp/be07-1st-6team-classdom/blob/main/classdom/image/course_search.png">
+</details>
+<details>
+<summary><b>강의 생성</b></summary>
+<img src="https://github.com/beyond-sw-camp/be07-1st-6team-classdom/blob/main/classdom/image/lecture_create.png">
+</details>
+<details>
+<summary><b>한 강좌에 대한 강의 전체 조회</b></summary>
+<img src="https://github.com/beyond-sw-camp/be07-1st-6team-classdom/blob/main/classdom/image/total_search.png">
+</details>
+<details>
+<summary><b>강좌에 대한 질문 대답하기</b></summary>
+<img src="https://github.com/beyond-sw-camp/be07-1st-6team-classdom/blob/main/classdom/image/question.png">
+<img src="https://github.com/beyond-sw-camp/be07-1st-6team-classdom/blob/main/classdom/image/response.png">
+</details>
+<details>
+<summary><b>과제 등록 및 조회</b></summary>
+<img src="https://github.com/beyond-sw-camp/be07-1st-6team-classdom/blob/main/classdom/image/work_upload_select.png">
+</details>
+
 
 
 #### 👩‍💻 학생
