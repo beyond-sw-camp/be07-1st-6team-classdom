@@ -35,17 +35,17 @@
 
 ### 👩‍🏫 서비스 목표
 
-  1.수강 생성 및 관리: 강사들이 쉽게 수강을 생성하고 체계적으로 관리할 수 있도록 지원.
+    1.수강 생성 및 관리: 강사들이 쉽게 수강을 생성하고 체계적으로 관리할 수 있도록 지원.
   
-  2.교육 자료 관리: 강의 노트, 슬라이드, 동영상 등 다양한 교육 자료를 효율적으로 저장하고 공유.
+    2.교육 자료 관리: 강의 노트, 슬라이드, 동영상 등 다양한 교육 자료를 효율적으로 저장하고 공유.
   
-  3.수강생 출결 관리: 수강생의 출석 및 결석을 간편하게 관리.
+    3.수강생 출결 관리: 수강생의 출석 및 결석을 간편하게 관리.
   
-  4.수강생 피드백 수집: 강의 후 수강생의 피드백을 체계적으로 수집하여 분석.
+    4.수강생 피드백 수집: 강의 후 수강생의 피드백을 체계적으로 수집하여 분석.
   
-  5.교육 기회 확대: 강사들이 더 많은 교육 기회를 가질 수 있도록 지원.
+    5.교육 기회 확대: 강사들이 더 많은 교육 기회를 가질 수 있도록 지원.
   
-  6.교육 품질 향상: 체계적인 관리와 피드백을 통해 지속적으로 교육 품질을 개선.
+    6.교육 품질 향상: 체계적인 관리와 피드백을 통해 지속적으로 교육 품질을 개선.
 
 <hr>
 
@@ -61,13 +61,17 @@
 
 ### 📝 WBS
 
-[WBS 바로가기](https://docs.google.com/spreadsheets/d/1eHBIEEkxueLymtcP5HVBi0v87ioZNQ4pFrXA9FRIbj0/edit#gid=0)
+[WBS 바로가기](https://docs.google.com/spreadsheets/d/1eHBIEEkxueLymtcP5HVBi0v87ioZNQ4pFrXA9FRIbj0/edit?usp=sharing)
 
-<img src="https://github.com/beyond-sw-camp/be07-1st-6team-classdom/blob/main/classdom/image/classdom%20project%20wbs.jpg">
+<img src="https://github.com/beyond-sw-camp/be07-1st-6team-classdom/blob/main/classdom/image/classdom%20project%20wbs.jpg"/>
 
 <hr>
 
 ### ✅ 요구사항 명세서
+
+[요구사항 명세서 바로가기](https://docs.google.com/spreadsheets/d/1Ge8ewxcIoQFSbuUcMrHNBwXbub2AGpcEBOwOsaRaceg/edit#gid=101003277)
+
+<img src="https://github.com/beyond-sw-camp/be07-1st-6team-classdom/blob/main/classdom/image/class%20dom%20project%20%EC%9A%94%EA%B5%AC%EC%82%AC%ED%95%AD%EB%AA%85%EC%84%B8%EC%84%9C.jpg"/>
 
 <hr>
 
