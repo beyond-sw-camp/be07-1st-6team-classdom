@@ -39,7 +39,15 @@ END
 
 --강좌 등록
 DELIMITER //
-CREATE PROCEDURE course_upload(in nameInput varchar(255), in descriptionInput varchar(8000), in priceInput decimal(10,2), in categoryInput varchar(255), in start_dateInput datetime, in end_dateInput datetime, in instructor_idInput bigint, in maxInput int )
+CREATE PROCEDURE course_upload(in nameInput varchar(255), 
+in descriptionInput varchar(8000), 
+in priceInput decimal(10,2), 
+in categoryInput varchar(255), 
+in start_dateInput datetime, 
+in end_dateInput datetime, 
+in instructor_idInput bigint, 
+in maxInput int )
+
 BEGIN
     insert into course(name, description, price, category, start_date, end_date, instructor_id, max_student) values (nameInput, descriptionInput, priceInput, categoryInput, start_dateInput, end_dateInput, instructor_idInput, maxInput);
 END
