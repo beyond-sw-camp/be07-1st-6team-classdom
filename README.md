@@ -313,7 +313,7 @@ CREATE TABLE `fa` (
 
 ### 📚 주요 프로시저
 
-[전체 프로시저 바로가기]()
+[전체 프로시저 바로가기](https://github.com/beyond-sw-camp/be07-1st-6team-classdom/blob/main/classdom/integrated_procedure/integrated_procedure.sql)
 
 <details>
 <summary><b>👩‍💻회원</b></summary>
