@@ -424,11 +424,11 @@ END
 
 --강의 프로시저
 DELIMITER //
-CREATE PROCEDURE lecture_upload(in instructorEmail varchar(255), in courseId bigint, in name varchar(255), in content varchar(255), in running_time Time)
+CREATE PROCEDURE (in instructorEmail varchar(255), in courseIdInput bigint, in name varchar(255), in content varchar(255), in running_time Time)
 BEGIN
-        declare courseId bigint;        -- course_id
+    declare courseId bigint;        -- course_id
     declare instructorId bigint;        -- instructor_id
-        select id into instructorId from user where email = instructorEmail;
+    select id into instructorId from user where email = instructorEmail;
 
     select id into courseId from course where id = courseIdInput and instructor_id = instructorId;
     
