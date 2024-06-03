@@ -3,6 +3,26 @@
 
 <hr>
 
+### 🤗 팀명 : 꿈은 거창하게
+ 
+### 🤭 팀원
+
+<p align="center">
+	<img src="https://github.com/hjin111/be07-1st-6team-classdom/blob/main/min.jpg" width="200" height="200"/>
+	<img src="https://github.com/hjin111/be07-1st-6team-classdom/blob/main/seung.jpg" width="200" height="200"/>
+	<img src="https://github.com/hjin111/be07-1st-6team-classdom/blob/main/su.jpg" width="200" height="200"/>
+	<img src="https://github.com/hjin111/be07-1st-6team-classdom/blob/main/hye.jpg" width="200" height="200"/>
+</p>
+
+<div align="center">
+	
+|   &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;  &nbsp;  &nbsp; 🐶 김민성  &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  &nbsp;  &nbsp;    |      &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  &nbsp;  &nbsp; 🐱신승현  &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  &nbsp;  &nbsp;    |      &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  &nbsp;  &nbsp; 🐹김수연  &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  &nbsp;  &nbsp;    |     &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  &nbsp;  &nbsp; 🐰이혜진B  &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  &nbsp;  &nbsp;   | 
+|------------------------------------------|--------------------------------------|------------------------------------------|-----------------------------------|
+ 
+</div>
+
+<hr>
+
 ### 👨‍🏫 프로젝트 개요
   
   ClassDom 시스템은 프리랜서 교육 강사들이 효율적이고 효과적으로 교육 활동을 수행할 수 있도록 지원하기 위해 기획된 서비스입니다.
@@ -29,22 +49,26 @@
 
 <hr>
 
-### 🤗 팀명 : 꿈은 거창하게
- 
-### 🤭 팀원
+### 🔨 기술 스택
 
-<p align="center">
-	<img src="https://github.com/hjin111/be07-1st-6team-classdom/blob/main/min.jpg" width="200" height="200"/>
-	<img src="https://github.com/hjin111/be07-1st-6team-classdom/blob/main/seung.jpg" width="200" height="200"/>
-	<img src="https://github.com/hjin111/be07-1st-6team-classdom/blob/main/su.jpg" width="200" height="200"/>
-	<img src="https://github.com/hjin111/be07-1st-6team-classdom/blob/main/hye.jpg" width="200" height="200"/>
-</p>
+<hr>
 
-<div align="center">
-	
-|   &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;  &nbsp;  &nbsp; 🐶 김민성  &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  &nbsp;  &nbsp;    |      &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  &nbsp;  &nbsp; 🐱신승현  &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  &nbsp;  &nbsp;    |      &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  &nbsp;  &nbsp; 🐹김수연  &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  &nbsp;  &nbsp;    |     &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  &nbsp;  &nbsp; 🐰이혜진B  &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  &nbsp;  &nbsp;   | 
-|------------------------------------------|--------------------------------------|------------------------------------------|-----------------------------------|
- 
-</div>
+### 📝 WBS
+
+<hr>
+
+### ✅ 요구사항 명세서
+
+<hr>
+
+### 💻 DB 테이블 - ERD
+
+<hr>
+
+### 🧪 단위 테스트
+
+<hr>
+
+### 🌏 통합 테스트
 
 <hr>
