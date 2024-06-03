@@ -16,7 +16,6 @@ CREATE TABLE `course` (
   `name` varchar(255) NOT NULL,
   `description` varchar(8000) NOT NULL,
   `price` int NOT NULL,
-  `category` varchar(255) NOT NULL,
   `start_date` datetime NOT NULL,
   `end_date` datetime NOT NULL,
   `instructor_id` bigint(20) unsigned NOT NULL,
