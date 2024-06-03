@@ -50,3 +50,10 @@
 </div>
 
 <hr>
+
+### 💻 기술 스택
+<div align="center">
+	
+#4479A1
+ 
+</div>
