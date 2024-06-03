@@ -61,7 +61,11 @@
 
 ### 📝 WBS
 
+<img src="https://github.com/beyond-sw-camp/be07-1st-6team-classdom/blob/main/classdom/image/classdom%20project%20wbs.jpg">
+
 <hr>
+
+
 
 ### ✅ 요구사항 명세서
 
