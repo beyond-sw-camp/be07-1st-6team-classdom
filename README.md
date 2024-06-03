@@ -321,6 +321,7 @@ CREATE TABLE `fa` (
 #### 👨‍💻 강사
 <details>
 <summary><b>강좌 등록 신청</b></summary>
+<img src="https://github.com/beyond-sw-camp/be07-1st-6team-classdom/blob/main/classdom/image/course_upload.png">
 </details>
 
 
