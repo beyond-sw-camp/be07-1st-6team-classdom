@@ -354,7 +354,38 @@ CREATE TABLE `fa` (
 </details>
 
 
-
 #### 👩‍💻 학생
-
+<details>
+<summary><b>회원 회원가입</b></summary>
+<img src="https://github.com/beyond-sw-camp/be07-1st-6team-classdom/blob/main/classdom/image/join.png">
+</details>
+<details>
+<summary><b>classdom의 전체 강좌를 조회</b></summary>
+<img src="https://github.com/beyond-sw-camp/be07-1st-6team-classdom/blob/main/classdom/image/user_course_select.png">
+</details>
+<details>
+<summary><b>수강 신청 하기</b></summary>
+<img src="https://github.com/beyond-sw-camp/be07-1st-6team-classdom/blob/main/classdom/image/register.png">
+</details>
+<details>
+<summary><b>결제 할 카드 등록</b></summary>
+<img src="https://github.com/beyond-sw-camp/be07-1st-6team-classdom/blob/main/classdom/image/card_upload.png">
+</details>
+<details>
+<summary><b>수강하는 전체 강좌를 조회</b></summary>
+<img src="https://github.com/beyond-sw-camp/be07-1st-6team-classdom/blob/main/classdom/image/register_all_select.png">
+</details>
+<details>
+<summary><b>수강하는 강좌 취소</b></summary>
+<img src="https://github.com/beyond-sw-camp/be07-1st-6team-classdom/blob/main/classdom/image/register_delete.png">
+</details>
+<details>
+<summary><b>질문 게시글 등록</b></summary>
+<img src="https://github.com/beyond-sw-camp/be07-1st-6team-classdom/blob/main/classdom/image/question_1.png">
+<img src="https://github.com/beyond-sw-camp/be07-1st-6team-classdom/blob/main/classdom/image/question_2.png">
+</details>
+<details>
+<summary><b>질문에 대한 답변 조회</b></summary>
+<img src="https://github.com/beyond-sw-camp/be07-1st-6team-classdom/blob/main/classdom/image/response_select.png">
+</details>
 <hr>
