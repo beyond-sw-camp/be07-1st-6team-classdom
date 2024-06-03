@@ -15,17 +15,18 @@ CREATE TABLE `course` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `description` varchar(8000) NOT NULL,
-  `price` int NOT NULL,
+  `price` int(11) NOT NULL,
   `start_date` datetime NOT NULL,
   `end_date` datetime NOT NULL,
   `instructor_id` bigint(20) unsigned NOT NULL,
   `created_date` datetime DEFAULT current_timestamp(),
   `del_yn` char(1) DEFAULT 'N',
-  `max_student` int DEFAULT 30,
+  `max_student` int(11) DEFAULT 30,
+  `approval` char(1) DEFAULT 'N',
   PRIMARY KEY (`id`),
   KEY `user_id_fk` (`instructor_id`),
   CONSTRAINT `user_id_fk` FOREIGN KEY (`instructor_id`) REFERENCES `user` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 CREATE TABLE `lecture` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
