@@ -615,6 +615,29 @@ END
 // DELIMITER ;
 ```
 </details>
+
+<details>
+<summary><b>6. 출결확인</b></summary>
+
+```sql
+DELIMITER //
+CREATE DEFINER=`root`@`localhost` PROCEDURE `attendance_total_search`(in studentEmail varchar(255))
+BEGIN
+declare studentId bigint;
+    select id into studentId from user where email = studentEmail;
+    
+    select c.name as '강의명', count(a.id) as '시청한 강의 수', count(*) as '전체 강의 수'
+from course_register cr  right outer join lecture l on cr.course_id = l.course_id 
+inner join course c on c.id = cr.course_id 
+left outer join attendance a on l.id = a.lecture_id  and a.student_id = studentId
+where l.del_yn = 'N' and cr.student_id = studentId
+group by cr.course_id;
+END
+// DELIMITER ;
+
+```
+</details>
+
 </div>
 </details>
 
