@@ -16,6 +16,14 @@ END
 
 call course_approval();
 
+DELIMITER //
+create procedure 수강신청 (in 학생id bigint(20),in 강좌id bigint(20))
+BEGIN
+    insert into course_register (student_id,course_id) values (학생id,강좌id);
+
+END
+// DELIMITER ;
+
 -- 승인된 전체 강좌 조회 프로시저 ( 강좌명, 강사명, 가격, 전체인원 조회 )
 DELIMITER //
 CREATE PROCEDURE course_all_search()
