@@ -51,6 +51,14 @@ BEGIN
 END
 // DELIMITER ;
 
+DELIMITER //
+create procedure 수강신청 (in 학생id bigint(20),in 강좌id bigint(20))
+BEGIN
+    insert into course_register (student_id,course_id) values (학생id,강좌id);
+
+END
+// DELIMITER ;
+
 --강좌 승인
 DELIMITER //
 CREATE PROCEDURE course_approval(in course_idInput bigint)
