@@ -24,7 +24,7 @@ BEGIN
         course_register cr ON c.id = cr.course_id
     WHERE
         cr.student_id = student_id
-        AND c.course_name = course_name
+        AND c.course_name = course_name -- course_name이 문제인듯
         AND cr.del_yn = 'N'
         AND e.del_yn = 'N';
 END

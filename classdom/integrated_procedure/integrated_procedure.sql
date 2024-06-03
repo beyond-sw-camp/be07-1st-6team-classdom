@@ -298,7 +298,6 @@ BEGIN
 END
 // DELIMITER ;
 
-
 -- 회원이 시험을 조회한다. 단일 조회
 DELIMITER //
 CREATE PROCEDURE `get_student_exam`(IN student_id BIGINT, IN course_name VARCHAR(255))
