@@ -6,6 +6,10 @@ BEGIN
 END
 // DELIMITER ;
 
+call lecture_upload('김선국의 꽉 JAVA 특강','자 이게 클릭이야',1,'1:10:10');
+call lecture_upload('김선국의 꽉 JAVA 특강','자 이게 int야',1,'1:14:10');
+call lecture_upload('김선국의 꽉 JAVA 특강','자 이게 double야',1,'1:16:10');
+call lecture_upload('김선국의 꽉 JAVA 특강','자 이게 Array야',1,'1:12:10');
 
 --강의 프로시저
 DELIMITER //

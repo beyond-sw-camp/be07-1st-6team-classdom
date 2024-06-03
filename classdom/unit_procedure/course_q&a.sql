@@ -16,6 +16,8 @@ BEGIN
 END
 // DELIMITER ;
 
+call response_upload('그게 머지요?',1,1)
+
 -- 게시글 전체 조회(게시글 목록)
 DELIMITER //
 CREATE PROCEDURE question_select()
