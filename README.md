@@ -311,7 +311,9 @@ CREATE TABLE `fa` (
 
 <hr>
 
-### 📚 프로시저
+### 📚 주요 프로시저
+
+[전체 프로시저 바로가기]()
 
 <details>
 <summary><b>👩‍💻회원</b></summary>
