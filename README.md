@@ -318,7 +318,11 @@ CREATE TABLE `fa` (
 
 ### 🧪 테스트 케이스
 
-#### 👩‍💻 강사
+#### 👨‍💻 강사
+<details>
+<summary><b>강좌 등록 신청</b></summary>
+</details>
+
 
 #### 👩‍💻 학생
 
