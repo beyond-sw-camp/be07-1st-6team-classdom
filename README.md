@@ -83,7 +83,7 @@
 <summary><b>CLASSDOM DDL</b></summary>
 	
 ```sql
-
+-- 회원 table 생성
 CREATE TABLE `user` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `email` varchar(255) NOT NULL,
@@ -97,6 +97,7 @@ CREATE TABLE `user` (
   UNIQUE KEY `email` (`email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+-- 강좌 table 생성
 CREATE TABLE `course` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
@@ -114,6 +115,7 @@ CREATE TABLE `course` (
   CONSTRAINT `user_id_fk` FOREIGN KEY (`instructor_id`) REFERENCES `user` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+-- 강의 table 생성
 CREATE TABLE `lecture` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
@@ -127,111 +129,7 @@ CREATE TABLE `lecture` (
   CONSTRAINT `course_id_fk` FOREIGN KEY (`course_id`) REFERENCES `course` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
-CREATE TABLE `exam` (
-  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `course_id` bigint(20) unsigned NOT NULL,
-  `title` varchar(255) NOT NULL,
-  `content` varchar(3000) DEFAULT NULL,
-  `exam_date` datetime NOT NULL,
-  `limited_time` datetime DEFAULT NULL,
-  `created_date` datetime DEFAULT current_timestamp(),
-  `del_yn` char(1) DEFAULT 'N',
-  PRIMARY KEY (`id`),
-  KEY `exam_course_id_fk` (`course_id`),
-  CONSTRAINT `exam_course_id_fk` FOREIGN KEY (`course_id`) REFERENCES `course` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
-CREATE TABLE `exam_output` (
-  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `exam_id` bigint(20) unsigned NOT NULL,
-  `student_id` bigint(20) unsigned NOT NULL,
-  `content` varchar(3000) NOT NULL,
-  `score` int(11) DEFAULT NULL,
-  `created_date` datetime DEFAULT current_timestamp(),
-  `del_yn` char(1) DEFAULT 'N',
-  PRIMARY KEY (`id`),
-  KEY `exam_output_exam_id_idx` (`exam_id`),
-  KEY `exam_output_student_id_idx` (`student_id`),
-  CONSTRAINT `exam_output_exam_id` FOREIGN KEY (`exam_id`) REFERENCES `exam` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `exam_output_student_id` FOREIGN KEY (`student_id`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
-CREATE TABLE `payment_method` (
-  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `student_id` bigint(20) unsigned NOT NULL,
-  `card_category` varchar(45) DEFAULT NULL,
-  `card_number` char(16) DEFAULT NULL,
-  `created_date` datetime DEFAULT current_timestamp(),
-  `del_yn` char(1) DEFAULT 'N',
-  PRIMARY KEY (`id`),
-  KEY `payment_method_student_id_idx` (`student_id`),
-  CONSTRAINT `payment_method_student_id` FOREIGN KEY (`student_id`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
-CREATE TABLE `course_register` (
-  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `student_id` bigint(20) unsigned DEFAULT NULL,
-  `course_id` bigint(20) unsigned DEFAULT NULL,
-  `completed_state` char(1) DEFAULT 'N',
-  `created_time` datetime DEFAULT current_timestamp(),
-  `del_yn` char(1) DEFAULT 'N',
-  PRIMARY KEY (`id`),
-  KEY `course_register_course_id_idx` (`course_id`),
-  KEY `course_register_student_id_idx` (`student_id`),
-  CONSTRAINT `course_register_course_id` FOREIGN KEY (`course_id`) REFERENCES `course` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `course_register_student_id` FOREIGN KEY (`student_id`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
-CREATE TABLE `payment` (
-  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `register_id` bigint(20) unsigned DEFAULT NULL,
-  `payment_id` bigint(20) unsigned DEFAULT NULL,
-  `del_yn` char(1) DEFAULT 'N',
-  PRIMARY KEY (`id`),
-  KEY `register_id_idx` (`register_id`),
-  KEY `payment_id_idx` (`payment_id`),
-  CONSTRAINT `payment_ibfk_1` FOREIGN KEY (`register_id`) REFERENCES `course_register` (`id`),
-  CONSTRAINT `payment_ibfk_2` FOREIGN KEY (`payment_id`) REFERENCES `payment_method` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
-CREATE TABLE `review` (
-  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `course_id` bigint(20) unsigned DEFAULT NULL,
-  `student_id` bigint(20) unsigned DEFAULT NULL,
-  `content` text DEFAULT NULL,
-  `star` int(11) DEFAULT NULL,
-  `created_date` datetime DEFAULT current_timestamp(),
-  `del_yn` char(1) DEFAULT 'N',
-  PRIMARY KEY (`id`),
-  KEY `course_id_idx` (`course_id`),
-  KEY `student_id_idx` (`student_id`),
-  CONSTRAINT `review_ibfk_1` FOREIGN KEY (`course_id`) REFERENCES `course` (`id`),
-  CONSTRAINT `review_ibfk_2` FOREIGN KEY (`student_id`) REFERENCES `user` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
-CREATE TABLE `attendance` (
-  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `student_id` bigint(20) unsigned DEFAULT NULL,
-  `lecture_id` bigint(20) unsigned DEFAULT NULL,
-  `state` char(1) DEFAULT 'N',
-  `view_date` datetime DEFAULT current_timestamp(),
-  `del_yn` char(1) DEFAULT 'N',
-  PRIMARY KEY (`id`),
-  KEY `student_id_idx` (`student_id`),
-  KEY `lecture_id_idx` (`lecture_id`),
-  CONSTRAINT `attendance_ibfk_1` FOREIGN KEY (`student_id`) REFERENCES `user` (`id`),
-  CONSTRAINT `attendance_ibfk_2` FOREIGN KEY (`lecture_id`) REFERENCES `lecture` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
-CREATE TABLE `fa` (
-  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `title` varchar(255) DEFAULT NULL,
-  `content` text DEFAULT NULL,
-  `created_date` datetime DEFAULT current_timestamp(),
-  `del_yn` char(1) DEFAULT 'N',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
+-- 강좌질문 table 생성
 CREATE TABLE `course_question` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `title` varchar(255) NOT NULL,
@@ -247,6 +145,7 @@ CREATE TABLE `course_question` (
   CONSTRAINT `question_writer_fk` FOREIGN KEY (`writer`) REFERENCES `user` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+-- 강좌질문답변 table 생성
 CREATE TABLE `course_response` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `content` varchar(3000) DEFAULT NULL,
@@ -263,6 +162,7 @@ CREATE TABLE `course_response` (
   CONSTRAINT `question_response_fk` FOREIGN KEY (`writer`) REFERENCES `user` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+-- 강좌과제 table 생성
 CREATE TABLE `assignment` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `title` varchar(255) NOT NULL,
@@ -277,6 +177,7 @@ CREATE TABLE `assignment` (
   CONSTRAINT `course_assignment_fk` FOREIGN KEY (`course_id`) REFERENCES `course` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+-- 강좌과제제출물 table 생성
 CREATE TABLE `assignment_output` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `content` varchar(3000) DEFAULT NULL,
@@ -293,9 +194,121 @@ CREATE TABLE `assignment_output` (
   CONSTRAINT `assignment_student_fk` FOREIGN KEY (`student_id`) REFERENCES `user` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+-- 강좌시험 table 생성
+CREATE TABLE `exam` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `course_id` bigint(20) unsigned NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `content` varchar(3000) DEFAULT NULL,
+  `exam_date` datetime NOT NULL,
+  `limited_time` datetime DEFAULT NULL,
+  `created_date` datetime DEFAULT current_timestamp(),
+  `del_yn` char(1) DEFAULT 'N',
+  PRIMARY KEY (`id`),
+  KEY `exam_course_id_fk` (`course_id`),
+  CONSTRAINT `exam_course_id_fk` FOREIGN KEY (`course_id`) REFERENCES `course` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- 강좌시험 제출물 table 생성
+CREATE TABLE `exam_output` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `exam_id` bigint(20) unsigned NOT NULL,
+  `student_id` bigint(20) unsigned NOT NULL,
+  `content` varchar(3000) NOT NULL,
+  `score` int(11) DEFAULT NULL,
+  `created_date` datetime DEFAULT current_timestamp(),
+  `del_yn` char(1) DEFAULT 'N',
+  PRIMARY KEY (`id`),
+  KEY `exam_output_exam_id_idx` (`exam_id`),
+  KEY `exam_output_student_id_idx` (`student_id`),
+  CONSTRAINT `exam_output_exam_id` FOREIGN KEY (`exam_id`) REFERENCES `exam` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `exam_output_student_id` FOREIGN KEY (`student_id`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- 결제수단 table 생성
+CREATE TABLE `payment_method` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `student_id` bigint(20) unsigned NOT NULL,
+  `card_category` varchar(45) DEFAULT NULL,
+  `card_number` char(16) DEFAULT NULL,
+  `created_date` datetime DEFAULT current_timestamp(),
+  `del_yn` char(1) DEFAULT 'N',
+  PRIMARY KEY (`id`),
+  KEY `payment_method_student_id_idx` (`student_id`),
+  CONSTRAINT `payment_method_student_id` FOREIGN KEY (`student_id`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- 강좌 수강 table 생성
+CREATE TABLE `course_register` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `student_id` bigint(20) unsigned DEFAULT NULL,
+  `course_id` bigint(20) unsigned DEFAULT NULL,
+  `completed_state` char(1) DEFAULT 'N',
+  `created_time` datetime DEFAULT current_timestamp(),
+  `del_yn` char(1) DEFAULT 'N',
+  PRIMARY KEY (`id`),
+  KEY `course_register_course_id_idx` (`course_id`),
+  KEY `course_register_student_id_idx` (`student_id`),
+  CONSTRAINT `course_register_course_id` FOREIGN KEY (`course_id`) REFERENCES `course` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `course_register_student_id` FOREIGN KEY (`student_id`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- 결제 table 생성
+CREATE TABLE `payment` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `register_id` bigint(20) unsigned DEFAULT NULL,
+  `payment_id` bigint(20) unsigned DEFAULT NULL,
+  `del_yn` char(1) DEFAULT 'N',
+  PRIMARY KEY (`id`),
+  KEY `register_id_idx` (`register_id`),
+  KEY `payment_id_idx` (`payment_id`),
+  CONSTRAINT `payment_ibfk_1` FOREIGN KEY (`register_id`) REFERENCES `course_register` (`id`),
+  CONSTRAINT `payment_ibfk_2` FOREIGN KEY (`payment_id`) REFERENCES `payment_method` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- 리뷰 table 생성
+CREATE TABLE `review` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `course_id` bigint(20) unsigned DEFAULT NULL,
+  `student_id` bigint(20) unsigned DEFAULT NULL,
+  `content` text DEFAULT NULL,
+  `star` int(11) DEFAULT NULL,
+  `created_date` datetime DEFAULT current_timestamp(),
+  `del_yn` char(1) DEFAULT 'N',
+  PRIMARY KEY (`id`),
+  KEY `course_id_idx` (`course_id`),
+  KEY `student_id_idx` (`student_id`),
+  CONSTRAINT `review_ibfk_1` FOREIGN KEY (`course_id`) REFERENCES `course` (`id`),
+  CONSTRAINT `review_ibfk_2` FOREIGN KEY (`student_id`) REFERENCES `user` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- 출결 table 생성
+CREATE TABLE `attendance` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `student_id` bigint(20) unsigned DEFAULT NULL,
+  `lecture_id` bigint(20) unsigned DEFAULT NULL,
+  `state` char(1) DEFAULT 'N',
+  `view_date` datetime DEFAULT current_timestamp(),
+  `del_yn` char(1) DEFAULT 'N',
+  PRIMARY KEY (`id`),
+  KEY `student_id_idx` (`student_id`),
+  KEY `lecture_id_idx` (`lecture_id`),
+  CONSTRAINT `attendance_ibfk_1` FOREIGN KEY (`student_id`) REFERENCES `user` (`id`),
+  CONSTRAINT `attendance_ibfk_2` FOREIGN KEY (`lecture_id`) REFERENCES `lecture` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- F&A table 생성
+CREATE TABLE `fa` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) DEFAULT NULL,
+  `content` text DEFAULT NULL,
+  `created_date` datetime DEFAULT current_timestamp(),
+  `del_yn` char(1) DEFAULT 'N',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
 ```
 </details>
-
 
 <hr>
 
