@@ -306,13 +306,203 @@ CREATE TABLE `fa` (
   `del_yn` char(1) DEFAULT 'N',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
 ```
 </details>
 
 <hr>
 
 ### 📚 프로시저
+
+<details>
+<summary><b>👩‍💻회원</b></summary>
+<div>
+<details>
+<summary><b>1. 회원가입</b></summary>
+
+```sql
+DELIMITER //
+CREATE PROCEDURE user_join(in emailInput varchar(255), in pwInput varchar(255), in nameInput varchar(255), in PhoneInput varchar(255), in roleInput enum('학생', '강사', '관리자') )
+BEGIN
+  insert into user(email, password, name, phone_number, role ) values (emailInput, pwInput, nameInput, PhoneInput, roleInput);
+END
+// DELIMITER ;
+ ```
+</details>
+<details>
+<summary><b>2. 회원조회</b></summary>
+
+```sql
+DELIMITER //
+CREATE PROCEDURE user_search(in email varchar(255))
+BEGIN
+  select * from user where email = email;
+END
+// DELIMITER ;
+ ```
+</details>
+<details>
+<summary><b>3. 회원정보수정</b></summary>
+
+```sql
+DELIMITER //
+CREATE PROCEDURE user_modify(in userEmail varchar(255), in userPw varchar(255), in userName varchar(255), in userPhone varchar(255))
+BEGIN
+  declare userId bigint;
+  select id into userId from user where email = userEmail and password = userPw;
+  if userId is null then
+    select '아이디/비밀번호가 틀렸습니다.';
+  else 
+    update user set name = userName, phone_number = userPhone where id=userId;
+  select '변경이 완료되었습니다.', email, password, name, phone_number from user where id = userId;
+  end if;
+END
+// DELIMITER ;
+```
+</details>
+<details>
+<summary><b>4. 회원탈퇴</b></summary>
+
+```sql
+DELIMITER //
+CREATE PROCEDURE user_withdraw(in delete_email varchar(255))
+BEGIN
+  update user set del_yn = 'Y' where email = delete_email;
+END
+// DELIMITER ;
+ ```
+</details>
+</div>
+</details>
+
+<details>
+<summary><b>📘강좌</b></summary>
+<div>
+<details>
+<summary><b>1. 강좌등록(강사)</b></summary>
+
+```sql
+DELIMITER //
+CREATE PROCEDURE course_upload(in nameInput varchar(255), in descriptionInput varchar(8000), in priceInput decimal(10,2), in categoryInput varchar(255), in start_dateInput datetime, in end_dateInput datetime, in instructor_idInput bigint, in maxInput int )
+BEGIN
+  insert into course(name, description, price, category, start_date, end_date, instructor_id, max_student) values (nameInput, descriptionInput, priceInput, categoryInput, start_dateInput, end_dateInput, instructor_idInput, maxInput);
+END
+// DELIMITER ;
+```
+</details>
+<details>
+<summary><b>2. 강좌승인(관리자)</b></summary>
+
+```sql
+DELIMITER //
+CREATE PROCEDURE course_approval(in course_idInput bigint)
+BEGIN
+  update course set approval = 'Y' where id = course_idInput;
+ END
+ // DELIMITER ;
+```
+</details>
+<details>
+<summary><b>3. 강좌수강신청(학생)</b></summary>
+
+```sql
+DELIMITER //
+create procedure 수강신청 (in 학생id bigint(20),in 강좌id bigint(20))
+BEGIN
+  insert into course_register (student_id,course_id) values (학생id,강좌id);
+END
+// DELIMITER ;
+```
+</details>
+<details>
+<summary><b>4. 승인강좌전체조회(회원)</b></summary>
+
+```sql
+DELIMITER //
+CREATE PROCEDURE course_all_search()
+BEGIN
+  select c.name as'강좌명', u.name as'강사명', c.price as'가격', c.max_student as'전체인원' 
+  from course c left join user u on c.instructor_id = u.id 
+  where c.approval = 'Y';
+END
+// DELIMITER ;
+```
+</details>
+<details>
+<summary><b>5. 승인강좌단일조회(회원-강좌명검색)</b></summary>
+
+```sql
+DELIMITER //
+CREATE PROCEDURE course_one_search(in 강좌명 varchar(255))
+BEGIN
+  select c.name as '강좌명', u.name as '강사명', c.price as '가격', c.max_student as '전체인원' 
+  from course c left join user u on c.instructor_id = u.id 
+  where c.approval = 'Y' and c.name = 강좌명;
+END
+// DELIMITER ;
+```
+</details>
+<details>
+<summary><b>6. 수강강좌전체조회(학생)</b></summary>
+
+```sql
+DELIMITER //
+CREATE PROCEDURE register_all_search(in 학생id bigint(20))
+BEGIN
+  select c.name as 수강강좌명
+  from course_register r inner join course c on r.course_id = c.id
+  where r.student_id = 학생id; 
+END
+// DELIMITER ;
+```
+</details>
+<details>
+<summary><b>7. 수강강좌단일조회(학생)</b></summary>
+
+```sql
+DELIMITER //
+CREATE PROCEDURE register_one_search(in 학생id bigint(20), in 강좌id bigint(20))
+BEGIN
+  select c.name as 수강강좌명
+  from course_register r inner join course c on r.course_id = c.id
+  where r.student_id = 학생id and r.course_id = 강좌id; 
+END
+// DELIMITER ;
+```
+</details>
+<details>
+<summary><b>8. 수강강좌취소(학생)</b></summary>
+
+ ```sql
+DELIMITER //
+CREATE PROCEDURE register_delete(in 학생id bigint(20), in 강좌명 varchar(255))
+BEGIN
+declare courseId bigint(20);
+  select id into courseId from course where name = 강좌명;
+  update course_register set del_yn = 'Y' where student_id = 학생id and course_id = courseId;
+END
+// DELIMITER ;
+```
+</details>
+<details>
+<summary><b>9. 수강강좌전체조회(학생)</b></summary>
+
+```sql
+DELIMITER //
+CREATE PROCEDURE `get_student_courses` (IN studentId BIGINT(20) UNSIGNED)
+BEGIN
+  SELECT c.*
+  FROM course c
+  INNER JOIN course_register cr ON c.id = cr.course_id
+  WHERE cr.student_id = studentId
+  AND cr.del_yn = 'N'
+  AND c.del_yn = 'N';
+END 
+// DELIMITER ;
+```
+</details>
+</div>
+</details>
+
 
 <hr>
 
