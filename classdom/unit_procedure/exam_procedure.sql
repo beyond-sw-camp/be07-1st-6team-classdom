@@ -6,6 +6,20 @@ BEGIN
 END
 // DELIMITER ;
 
+-- 강사가 회원이 응시한 시험의 내용을 등록한다. 피드백을 단다.
+DELIMITER //
+CREATE PROCEDURE 강사시험채점(
+    IN student_id BIGINT,
+    IN exam_id BIGINT,
+    IN exam_content VARCHAR(3000),
+    IN exam_score INT
+)
+BEGIN
+    INSERT INTO exam_output (exam_id, student_id, content, score, created_date)
+    VALUES (exam_id, student_id, exam_content, exam_score, CURRENT_TIMESTAMP());
+END 
+// DELIMITER ;
+
 
 -- 회원이 시험을 조회한다. 단일 조회
 DELIMITER //
