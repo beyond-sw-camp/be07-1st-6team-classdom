@@ -77,7 +77,7 @@
 
 ### 💻 DB 테이블 - ERD 및 DDL
 
-<p align="center"><img src="https://github.com/beyond-sw-camp/be07-1st-6team-classdom/blob/main/classdom/DB/classdom%20project%20ERD.png"/></p>
+<p align="center"><img src="https://github.com/beyond-sw-camp/be07-1st-6team-classdom/blob/main/classdom/image/classdom%20project%20ERD.png"/></p>
 
 <details>
 <summary><b>CLASSDOM DDL</b></summary>
