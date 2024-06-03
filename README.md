@@ -44,7 +44,7 @@
 
 <div align="center">
 	
-|    &nbsp; 🐶 김민성 &nbsp;    |      &nbsp;  &nbsp;  &nbsp; &nbsp;  &nbsp;  &nbsp; 🐱신승현  &nbsp;  &nbsp;  &nbsp; &nbsp;  &nbsp;  &nbsp;    |      &nbsp;  &nbsp;  &nbsp; &nbsp;  &nbsp;  &nbsp; 🐹김수연  &nbsp;  &nbsp;  &nbsp; &nbsp;  &nbsp;  &nbsp;    |     &nbsp;  &nbsp;  &nbsp; &nbsp;  &nbsp;  &nbsp; 🐰이혜진B  &nbsp;  &nbsp;  &nbsp; &nbsp;  &nbsp;  &nbsp;   | 
+|    &nbsp; 🐶 김민성 &nbsp;    |      &nbsp; &nbsp;  &nbsp;  &nbsp; 🐱신승현  &nbsp; &nbsp;  &nbsp;  &nbsp;    |      &nbsp; &nbsp;  &nbsp;  &nbsp; 🐹김수연  &nbsp; &nbsp;  &nbsp;  &nbsp;    |     &nbsp; &nbsp;  &nbsp;  &nbsp; 🐰이혜진B  &nbsp; &nbsp;  &nbsp;  &nbsp;   | 
 |------------------------------------------|--------------------------------------|------------------------------------------|-----------------------------------|
  
 </div>
