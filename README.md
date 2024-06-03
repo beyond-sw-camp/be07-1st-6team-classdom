@@ -1,6 +1,9 @@
-# ClassDom Database Project
-- 프로젝트 개요
-- 
+# 👑Class Dom👑
+<p align="center"><img src="https://github.com/hjin111/be07-1st-6team-classdom/blob/main/classdom.jpg" width="1000" height="300"/></p>
+
+### 👨‍🏫 프로젝트 개요<hr>
+
+  
   ClassDom 시스템은 프리랜서 교육 강사들이 효율적이고 효과적으로 교육 활동을 수행할 수 있도록 지원하기 위해 기획된 서비스입니다.
   
   서비스를 통해 강사들은 수강생 관리 업무에 소모되는 에너지를 줄이고, 고품질 강의 콘텐츠 제작에 집중할 수 있습니다.
@@ -9,9 +12,7 @@
 
 
 
-
-
-- 서비스 목표
+### 👩‍🏫 서비스 목표<hr>
 
 
   1.수강 생성 및 관리: 강사들이 쉽게 수강을 생성하고 체계적으로 관리할 수 있도록 지원.
@@ -26,3 +27,26 @@
   
   6.교육 품질 향상: 체계적인 관리와 피드백을 통해 지속적으로 교육 품질을 개선.
 
+
+<hr>
+
+
+### 🤗 팀명 : 꿈은 거창하게
+ 
+### 🤭 팀원
+
+<p align="center">
+	<img src="https://github.com/hjin111/be07-1st-6team-classdom/blob/main/min.jpg" width="200" height="200"/>
+	<img src="https://github.com/hjin111/be07-1st-6team-classdom/blob/main/seung.jpg" width="200" height="200"/>
+	<img src="https://github.com/hjin111/be07-1st-6team-classdom/blob/main/su.jpg" width="200" height="200"/>
+	<img src="https://github.com/hjin111/be07-1st-6team-classdom/blob/main/hye.jpg" width="200" height="200"/>
+</p>
+
+<div align="center">
+	
+|[김민성](https://www.naver.com/) | [신승현](https://www.naver.com/) | [김수연](https://www.naver.com/) | [이혜진](https://www.naver.com/) | 
+|------------------------------------------|--------------------------------------|------------------------------------------|-----------------------------------|
+ 
+</div>
+
+<hr>
